@@ -1,0 +1,30 @@
+PROCÉDURE dot_product(v1, v2, n, VAR ps)
+VAR
+    i : ENTIER
+DEBUT
+    ps ← 0
+    POUR i ← 0 À n - 1 FAIRE
+        ps ← ps + (v1[i] * v2[i])
+    FINPOUR
+FINPROCÉDURE
+
+
+ALGORITHME TestOrthogonalite
+VAR
+    v1, v2 : TABLEAU DÉCIMAL
+    n : ENTIER
+    ps : DÉCIMAL
+DEBUT
+    v1 ← [2, 1, 3]
+    v2 ← [-3, 0, 2]
+    n ← longueur(v1)
+
+    // Appel de la procédure
+    dot_product(v1, v2, n, ps)
+
+    SI ps = 0 ALORS
+        ECRIRE "Les vecteurs sont orthogonaux."
+    SINON
+        ECRIRE "Les vecteurs NE sont PAS orthogonaux."
+    FINSI
+FIN
